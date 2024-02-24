@@ -1,2 +1,2 @@
 # Admission-prediction
-College Admission prediction 
+Getting Admission in College Prediction
