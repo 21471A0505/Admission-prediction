@@ -1,0 +1,183 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Admission Prediction Form</h2>
+        <form action="/predict" method="post">
+            <label for="gre">GRE Score:</label>
+            <input type="number" id="gre" name="gre" required>
+
+            <label for="toefl">TOEFL Score:</label>
+            <input type="number" id="toefl" name="toefl" required>
+
+            <label for="university_rating">University Rating:</label>
+            <input type="number" id="university_rating" name="university_rating" required>
+
+            <label for="sop">SOP:</label>
+            <input type="number" id="sop" name="sop" required>
+
+            <label for="lor">LOR:</label>
+            <input type="number" id="lor" name="lor" required>
+
+            <label for="cgpa">CGPA:</label>
+            <input type="number" id="cgpa" name="cgpa" step="0.01" required>
+
+            <label for="research">Research Experience:</label>
+            <select id="research" name="research" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <br>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #13cf9d; Light gray background */
+            background-image: url(https://img.freepik.com/free-https://img.freepik.com/free-vector/education-pattern-background-doodle-style_53876-115365.jpg?w=740&t=st=1709232482~exp=1709233082~hmac=a8b31792d487f4f523ce1565981b52e184c81eda43a7c9be7bbca8ee8a9d3ff1/hand-drawn-back-school-background_23-2149464866.jpg?w=1060&t=st=1709232352~exp=https://img.freepik.com/free-vector/education-pattern-background-doodle-style_53876-115365.jpg?w=740&t=st=1709232482~exp=1709233082~hmac=a8b31792d487f4f523ce1565981b52e184c81eda43a7c9be7bbca8ee8a9d3ff1~hmac=4e3d4e9c9acfd1f65be3edf2ba837f2e4540f1ee67ca0b90da57c03acfda61ec);
+            background-size:contain;
+            background-repeat: repeat;
+            background-position:inherit;
+            max-width: 100%;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff; /* White container background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff; /* Blue heading color */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333333; /* Dark gray label color */
+        }
+        input[type="number"],
+        select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #cccccc; /* Light gray border */
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue submit button background */
+            color: #ffffff; /* White submit button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Admission Prediction Form</h2>
+        <form action="/predict" method="post">
+            <label for="gre">GRE Score:</label>
+            <input type="number" id="gre" name="gre" placeholder="250-340" required>
+
+            <label for="toefl">TOEFL Score:</label>
+            <input type="number" id="toefl" name="toefl" placeholder="89-120" required>
+
+            <label for="university_rating">University Rating:</label>
+            <input type="number" id="university_rating" name="university_rating" placeholder="01-05" required>
+
+            <label for="sop">SOP:</label>
+            <input type="number" id="sop" name="sop" placeholder="01-05" required>
+
+            <label for="lor">LOR:</label>
+            <input type="number" id="lor" name="lor" placeholder="01-05" required>
+
+            <label for="cgpa">CGPA:</label>
+            <input type="number" id="cgpa" name="cgpa" step="0.01" placeholder="6.1-10" required>
+
+            <label for="research">Research Experience:</label>
+            <select id="research" name="research" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
